@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  height: 45px;
+  height: 40px;
   background-color: #1f2229;
   font-family: "Tele2 TextSans Web SHORT";
 }
@@ -12,7 +12,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 18px;
   margin: 0 auto;
 }
 
@@ -24,6 +23,7 @@
 .header__burger-icon_open,
 .header__burger-icon_close {
   display: none;
+  cursor: pointer;
 }
 
 .header__info {
@@ -98,9 +98,27 @@
   }
 }
 
-@media (width <= 600px) {
+@media (width <= 1140px) {
+  .header__content {
+    padding: 0 18px;
+  }
+}
+
+@media (width <= 660px) {
+  .header {
+    height: 45px;
+  }
+
   .header__location {
     display: none;
+  }
+
+  .header__notifications {
+    display: none;
+  }
+
+  .header__notifications_visible {
+    display: block;
   }
 
   .header__burger-icon_open {

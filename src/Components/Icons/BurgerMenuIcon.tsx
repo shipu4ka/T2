@@ -2,15 +2,15 @@ import classNames from "classnames";
 import { FC } from "react";
 
 interface IProps {
-  isOpen: boolean;
+  isMenuOpen: boolean;
   onClick: () => void;
 }
 
-export const BurgerMenuIcon: FC<IProps> = ({ isOpen, onClick }) => {
+export const BurgerMenuIcon: FC<IProps> = ({ isMenuOpen, onClick }) => {
   return (
     <div
       className={classNames("header__burger-icon", {
-        header__menu_open: isOpen,
+        header__menu_open: isMenuOpen,
       })}
     >
       <svg

@@ -9,3 +9,7 @@
   font-family: "Tele2 TextSans Web SHORT";
   src: url("./assets/fonts/tele2-textsans-web-short-regular.ttf");
 }
+
+li {
+  list-style-type: none;
+}

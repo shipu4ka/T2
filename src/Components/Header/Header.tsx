@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { FC } from "react";
 import { BellIcon } from "../Icons/BellIcon";
 import { BurgerMenuIcon } from "../Icons/BurgerMenuIcon";
 import { InboxIndicatorIcon } from "../Icons/InboxIndicatorIcon";
 import { LocationIcon } from "../Icons/LocationIcon";
 import { Tele2Logo } from "../Logo/Tele2Logo";
 import "./Header.css";
+import classNames from "classnames";
 
-export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenuVisible = () => setIsMenuOpen((prev) => !prev);
+interface IProps {
+  isMenuOpen: boolean;
+  toggleMenuVisible: () => void;
+}
 
+export const Header: FC<IProps> = ({ isMenuOpen, toggleMenuVisible }) => {
   return (
     <header className="header">
       <div className="header__content">
@@ -19,13 +22,15 @@ export const Header = () => {
             <LocationIcon />
             <p>Москва и область</p>
           </div>
-          {!isMenuOpen && (
-            <div className="header__notifications">
-              <BellIcon />
-              <InboxIndicatorIcon />
-            </div>
-          )}
-          <BurgerMenuIcon isOpen={isMenuOpen} onClick={toggleMenuVisible} />
+          <div
+            className={classNames("header__notifications", {
+              header__notifications_visible: !isMenuOpen,
+            })}
+          >
+            <BellIcon />
+            <InboxIndicatorIcon />
+          </div>
+          <BurgerMenuIcon isMenuOpen={isMenuOpen} onClick={toggleMenuVisible} />
         </div>
       </div>
     </header>
