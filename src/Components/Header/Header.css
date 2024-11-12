@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  background-color: #1f2229;
+  font-family: "Tele2 TextSans Web SHORT";
+}
+
+.header__content {
+  max-width: 1116px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  margin: 0 auto;
+}
+
+.header__burger-icon {
+  display: flex;
+  align-items: center;
+}
+
+.header__burger-icon_open,
+.header__burger-icon_close {
+  display: none;
+}
+
+.header__info {
+  display: flex;
+}
+
+.header__location {
+  display: flex;
+  align-items: center;
+  color: #7c8792;
+  column-gap: 9px;
+}
+
+.header__notifications {
+  position: relative;
+  margin-left: 32px;
+  padding-top: 3px;
+}
+
+.header__inbox-indicator {
+  position: absolute;
+  top: 6px;
+  left: 12px;
+}
+
+.header__inbox-indicator {
+  animation: zoom 2s 1s both infinite;
+}
+
+.header__bell {
+  animation: bell 1s 1s both infinite;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(30deg);
+  }
+  20% {
+    transform: rotate(40deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media (width <= 600px) {
+  .header__location {
+    display: none;
+  }
+
+  .header__burger-icon_open {
+    display: block;
+    margin-left: 18px;
+  }
+
+  .header__menu_open .header__burger-icon_open {
+    display: none;
+  }
+
+  .header__menu_open .header__burger-icon_close {
+    display: block;
+    margin-left: 18px;
+  }
+}
